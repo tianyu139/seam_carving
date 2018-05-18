@@ -5,6 +5,8 @@
 
 Seam carving crops an image in a content-aware manner, described in the 2007 paper **Seam Carving for Content-Aware Image Resizing** by **Shai Avidan** and **Ariel Shamir**
 
+Energy function used: Dual gradient energy function
+
 Just a random program to familiarise myself with the HTML5 canvas object :)
 
 The mountain view picture is taken by me but anyone can feel free to use it~
