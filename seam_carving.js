@@ -1,17 +1,17 @@
 let canvas = document.getElementById('img');
 let gray_canvas = document.getElementById('gray');
 let energy_canvas = document.getElementById('energy');
-let seam_canvas = document.getElementById('seam');
+let original_canvas = document.getElementById('original');
 let ctx = canvas.getContext("2d");
 let gray_ctx = gray_canvas.getContext("2d");
 let energy_ctx = energy_canvas.getContext("2d");
-let seam_ctx = seam_canvas.getContext("2d");
+let original_ctx = original_canvas.getContext("2d");
 
 let mountain = new Image();
-mountain.src='view.jpg';
+mountain.src='view3.jpg';
 mountain.onload = () => {
-  ctx.drawImage(mountain, 0, 0, canvas.width, canvas.height);
-  init()
+  original_ctx.drawImage(mountain, 0, 0, canvas.width, canvas.height);
+  document.getElementById("startBtn").onclick = function() {init();};
 }
 
 function get_pixel(image,x,y){
@@ -80,6 +80,8 @@ function convert_pixel_to_gray(pixel){
 }
 
 function init(){
+  ctx.drawImage(mountain, 0, 0, canvas.width, canvas.height);
+
   let image = ctx.getImageData(0,0,canvas.width,canvas.height);
   let gray_image = gray_ctx.getImageData(0,0,gray_canvas.width,gray_canvas.height);
   for (let x = 0; x < image.width; x++){
